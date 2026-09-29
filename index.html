@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bLinkEdit Production // AI Video Creation & Editing Agency</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        primaryglow: '#818cf8',
+                        accentcyan: '#22d3ee',
+                        darkbg: '#030712',
+                        darksurface: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Outfit', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mesh-gradient {
+            background-image: radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                              radial-gradient(at 85% 85%, rgba(34, 211, 238, 0.12) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-slate-100 font-sans antialiased transition-colors duration-300 mesh-gradient min-h-screen">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkbg/85 backdrop-blur-md border-b border-slate-800 transition-colors duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accentcyan flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-play text-sm"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold tracking-wide uppercase leading-none">bLinkEdit</span>
+                    <span class="text-[10px] font-mono text-accentcyan tracking-wider uppercase mt-1">Production</span>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Portfolio Reel</a>
+                <a href="#reviews" class="hover:text-white transition-colors">Client Reviews</a>
+                <a href="#estimator" class="hover:text-white transition-colors">Project Estimator</a>
+                <a href="#process" class="hover:text-white transition-colors">Workflow</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" onclick="toggleTheme()" class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-300 hover:text-white hover:border-primary transition-all shadow-sm" aria-label="Toggle Dark/Light Mode">
+                    <i id="theme-icon" class="fa-solid fa-moon text-accentcyan"></i>
+                    <span id="theme-text" class="font-mono text-[11px]">Dark</span>
+                </button>
+
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primaryglow text-white text-sm font-semibold transition-all shadow-lg shadow-primary/25">
+                    <span>Book Discovery</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-slate-300 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-darksurface border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="#services" class="block text-slate-300 hover:text-white font-medium">Services</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-white font-medium">Portfolio Reel</a>
+            <a href="#reviews" class="block text-slate-300 hover:text-white font-medium">Client Reviews</a>
+            <a href="#estimator" class="block text-slate-300 hover:text-white font-medium">Project Estimator</a>
+            <a href="#process" class="block text-slate-300 hover:text-white font-medium">Workflow</a>
+            <a href="#faq" class="block text-slate-300 hover:text-white font-medium">FAQ</a>
+            <a href="#contact" class="block w-full text-center py-3 rounded-full bg-primary text-white font-semibold">Book Discovery Call</a>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono text-accentcyan mb-8">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span>Transforming Imagination Into High-Converting Visual Reality</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl mx-auto leading-[1.1] mb-8">
+                Turning Your Boldest Vision Into <span class="bg-gradient-to-r from-primary via-indigo-400 to-accentcyan bg-clip-text text-transparent">AI Video Creations & Masterpiece Edits</span>.
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light mb-12">
+                Specializing in realistic AI UGC Ads (~60s each), AI Commercial Ads, Product Video Ads, AI Cinematic Films, and professional elite editing to scale your brand explosively worldwide from Natore, Bangladesh.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold hover:bg-primaryglow transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/30">
+                    <span>Explore Video Reel</span>
+                    <i class="fa-solid fa-play text-xs"></i>
+                </a>
+                <a href="#estimator" class="w-full sm:w-auto px-8 py-4 rounded-full bg-darksurface border border-slate-800 text-slate-200 font-bold hover:border-primary transition-all flex items-center justify-center gap-3 shadow-sm">
+                    <span>Calculate Project Cost</span>
+                    <i class="fa-solid fa-calculator text-accentcyan text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Client Trust Bar -->
+            <div class="mt-20 pt-12 border-t border-slate-800">
+                <p class="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">Trusted by 120+ D2C brands, studios & creators worldwide</p>
+                <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all">
+                    <span class="text-lg font-bold tracking-tighter">LUMINA D2C</span>
+                    <span class="text-lg font-extrabold tracking-widest">AURA CO.</span>
+                    <span class="text-lg font-semibold">SYNTHETIC LABS</span>
+                    <span class="text-lg font-bold">NEXUS MEDIA</span>
+                    <span class="text-lg font-bold tracking-wider">HYPERION STUDIOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 border-t border-slate-800 bg-darksurface/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Core Capabilities</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">What We Produce For You</h2>
+                <p class="text-slate-400 font-light">Combining advanced neural video synthesis pipelines with seasoned Hollywood editing standards.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">High Conversion (~60s Each)</span>
+                    <h3 class="text-2xl font-bold mb-3">AI UGC Ads</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Ultra-realistic AI-generated user generated content ads with hyper-engaging avatars, voiceovers, and native TikTok/Reels hooks formatted at ~60s.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Custom AI Avatar Generation</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Localized Multi-Language Voice</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> High-CTR Hook Frameworks</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">Brand Scale</span>
+                    <h3 class="text-2xl font-bold mb-3">AI Commercial Ads</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Television-grade commercial spots built with generative scene creation, Sora, Runway Gen-3, and advanced CGI lighting.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Script-to-Screen Production</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Unreal Engine & AI Compositing</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Broadcast-Ready Mastering</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">E-Commerce Boost</span>
+                    <h3 class="text-2xl font-bold mb-3">AI Product Video Ads</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Breathtaking 3D product animations and AI environment showcases designed to skyrocket Shopify and Amazon conversion rates.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> 3D CAD & Asset Integration</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Surreal Environment Backdrops</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Optimized for Meta & TikTok Ads</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">Immersive Art</span>
+                    <h3 class="text-2xl font-bold mb-3">AI Cinematic Films</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Full-scale narrative short films, teaser trailers, and mood-driven cinematic masterworks crafted with proprietary neural workflows.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Narrative Direction & Storyboarding</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Consistent Character Keyframing</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Cinematic Sound Design & Score</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">Post Production</span>
+                    <h3 class="text-2xl font-bold mb-3">Video Editing & VFX</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Expert Adobe Premiere & DaVinci Resolve editing, motion graphics, clean roto, and professional color grading.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Dynamic Pacing & Retention Edits</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> DaVinci Resolve Color Grading</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Custom Kinetic Subtitles</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 hover:border-primary transition-all group shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="text-xs font-mono text-accentcyan uppercase tracking-wider mb-2 block">All-in-One Growth</span>
+                    <h3 class="text-2xl font-bold mb-3">Hybrid Retainer Agency</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">Continuous monthly output of AI UGC, product ads, and fast-turnaround shorts to keep your ad channels constantly fed.</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Dedicated Creative Producer</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> 48-Hour Iteration Cycles</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Unlimited Ad Variations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 border-t border-slate-800">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-accentcyan font-mono text-sm uppercase tracking-widest block mb-3">Portfolio Reel</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Recent Client Masterpieces</h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="work-filters">
+                    <button class="px-4 py-2 rounded-full text-xs font-medium bg-primary text-white transition-all filter-btn shadow-sm" data-filter="all">All Projects</button>
+                    <button class="px-4 py-2 rounded-full text-xs font-medium bg-darksurface text-slate-400 hover:text-white transition-all filter-btn border border-slate-800" data-filter="ugc">AI UGC Ads</button>
+                    <button class="px-4 py-2 rounded-full text-xs font-medium bg-darksurface text-slate-400 hover:text-white transition-all filter-btn border border-slate-800" data-filter="commercial">Commercials</button>
+                    <button class="px-4 py-2 rounded-full text-xs font-medium bg-darksurface text-slate-400 hover:text-white transition-all filter-btn border border-slate-800" data-filter="product">Product Ads</button>
+                    <button class="px-4 py-2 rounded-full text-xs font-medium bg-darksurface text-slate-400 hover:text-white transition-all filter-btn border border-slate-800" data-filter="cinematic">Cinematic</button>
+                </div>
+            </div>
+
+            <!-- 5 Columns x 3 Items Grid (15 Total Cards) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="portfolio-grid">
+                
+                <!-- Card 1 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="ugc">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/6366f1?text=AI+UGC+60s+01" alt="AI UGC Ad 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">UGC (60s)</div>
+                        <button onclick="openVideoModal('AI UGC Skincare Campaign #1', 'https://placehold.co/800x450/0f172a/6366f1?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Lumina Skincare</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Glow Serum Native Hook</h4>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="commercial">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Commercial+02" alt="Commercial 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Commercial</div>
+                        <button onclick="openVideoModal('Apex EV Spot #2', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Apex EV Motors</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Hypercar Launch Teaser</h4>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="product">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/818cf8?text=Product+Ad+03" alt="Product Ad 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Product Ad</div>
+                        <button onclick="openVideoModal('Chronos Watch 3D #3', 'https://placehold.co/800x450/0f172a/818cf8?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Chronos Luxury</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Liquid Gold Chronograph</h4>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="cinematic">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Cinematic+04" alt="Cinematic 04" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">AI Cinematic</div>
+                        <button onclick="openVideoModal('Aether Genesis Sci-Fi #4', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Nebula Studios</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Aether Genesis Trailer</h4>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="ugc">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/6366f1?text=AI+UGC+60s+05" alt="AI UGC Ad 05" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">UGC (60s)</div>
+                        <button onclick="openVideoModal('Fitness App AI UGC #5', 'https://placehold.co/800x450/0f172a/6366f1?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">FitPulse App</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Workout Routine Testimonial</h4>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="commercial">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Commercial+06" alt="Commercial 06" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Commercial</div>
+                        <button onclick="openVideoModal('Vortex Energy Drink #6', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Vortex Energy</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Extreme Sports TV Spot</h4>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="product">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/818cf8?text=Product+Ad+07" alt="Product Ad 07" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Product Ad</div>
+                        <button onclick="openVideoModal('SonicBass Earbuds #7', 'https://placehold.co/800x450/0f172a/818cf8?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">SonicBass Audio</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Cyberpunk Earbud Showcase</h4>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="cinematic">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Cinematic+08" alt="Cinematic 08" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">AI Cinematic</div>
+                        <button onclick="openVideoModal('Neon Samurai Short #8', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Tokyo Reborn</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Neon Samurai Vignette</h4>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="ugc">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/6366f1?text=AI+UGC+60s+09" alt="AI UGC Ad 09" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">UGC (60s)</div>
+                        <button onclick="openVideoModal('SaaS Tool AI UGC #9', 'https://placehold.co/800x450/0f172a/6366f1?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">TaskFlow AI</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Founder App Review Hook</h4>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="commercial">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Commercial+10" alt="Commercial 10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Commercial</div>
+                        <button onclick="openVideoModal('Nova Financial Spot #10', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Nova Bank</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Global Wealth TV Campaign</h4>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="product">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/818cf8?text=Product+Ad+11" alt="Product Ad 11" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Product Ad</div>
+                        <button onclick="openVideoModal('Aura Sneaker 3D #11', 'https://placehold.co/800x450/0f172a/818cf8?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Aura Footwear</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Levitating Runner Showcase</h4>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="cinematic">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Cinematic+12" alt="Cinematic 12" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">AI Cinematic</div>
+                        <button onclick="openVideoModal('Solaria Mars Colony #12', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Solaria Films</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Mars Colony Teaser</h4>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="ugc">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/6366f1?text=AI+UGC+60s+13" alt="AI UGC Ad 13" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">UGC (60s)</div>
+                        <button onclick="openVideoModal('Pet Food AI UGC #13', 'https://placehold.co/800x450/0f172a/6366f1?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">BarkChef Treats</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Organic Dog Food Hook</h4>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="commercial">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/22d3ee?text=Commercial+14" alt="Commercial 14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Commercial</div>
+                        <button onclick="openVideoModal('Zenith Audio #14', 'https://placehold.co/800x450/0f172a/22d3ee?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Zenith Sound</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Studio Headphone Anthem</h4>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darksurface border border-slate-800 transition-all hover:border-primary project-card shadow-sm" data-category="product">
+                    <div class="aspect-[9/16] relative overflow-hidden bg-slate-950">
+                        <img src="https://placehold.co/600x1067/0f172a/818cf8?text=Product+Ad+15" alt="Product Ad 15" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x1067/1e293b/ffffff?text=Video+Placeholder'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-slate-700 text-[10px] text-white">Product Ad</div>
+                        <button onclick="openVideoModal('Vogue Perfume 3D #15', 'https://placehold.co/800x450/0f172a/818cf8?text=Playing+Video+Stream')" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-accentcyan font-mono uppercase">Vogue Fragrance</span>
+                        <h4 class="font-bold text-sm mt-1 truncate">Crystal Mist Showcase</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-24 border-t border-slate-800 bg-darksurface/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Global Testimonials</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Loved by 20+ Worldwide Clients</h2>
+                <p class="text-slate-400 font-light">Read verified feedback from brands scaling globally with our AI video production pipelines.</p>
+            </div>
+
+            <!-- 4 Columns Grid, Each with 4 Reviews (Total 20 Reviews) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Column 1 (4 Reviews) -->
+                <div class="space-y-6">
+                    <!-- Review 1 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇺🇸</span>
+                                <span class="text-xs font-mono text-slate-400">United States</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"The 60s AI UGC ads delivered by bLinkEdit doubled our ROAS on TikTok within the first 3 days of launch. Incredible realism!"</p>
+                        <div class="font-bold text-xs text-white">Marcus Vance</div>
+                        <div class="text-[10px] text-slate-500">CMO, Lumina D2C</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇬🇧</span>
+                                <span class="text-xs font-mono text-slate-400">United Kingdom</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Their 2-minute cinematic sci-fi commercial teaser looks like a Hollywood blockbuster. Unreal quality."</p>
+                        <div class="font-bold text-xs text-white">Oliver Thorne</div>
+                        <div class="text-[10px] text-slate-500">Director, Nebula Studios</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇨🇦</span>
+                                <span class="text-xs font-mono text-slate-400">Canada</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Fast turnaround, professional communication, and phenomenal DaVinci Resolve color grading. Absolute pros."</p>
+                        <div class="font-bold text-xs text-white">Sophie Laurent</div>
+                        <div class="text-[10px] text-slate-500">Founder, Aura Co.</div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇦🇺</span>
+                                <span class="text-xs font-mono text-slate-400">Australia</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"The 3D product video animations skyrocketed our Shopify conversion rates by 45%. Worth every dollar."</p>
+                        <div class="font-bold text-xs text-white">Liam O'Connor</div>
+                        <div class="text-[10px] text-slate-500">E-Commerce Head, Apex</div>
+                    </div>
+                </div>
+
+                <!-- Column 2 (4 Reviews) -->
+                <div class="space-y-6">
+                    <!-- Review 5 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇩🇪</span>
+                                <span class="text-xs font-mono text-slate-400">Germany</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Precise adherence to our brand guidelines. The AI avatars spoke German natively without any robotic accent."</p>
+                        <div class="font-bold text-xs text-white">Hans Weber</div>
+                        <div class="text-[10px] text-slate-500">Head of Growth, Berlin Labs</div>
+                    </div>
+                    <!-- Review 6 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇫🇷</span>
+                                <span class="text-xs font-mono text-slate-400">France</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Magnificent luxury fragrance showcase video. The crystal mist effects looked breathtaking."</p>
+                        <div class="font-bold text-xs text-white">Camille Dupont</div>
+                        <div class="text-[10px] text-slate-500">Creative Dir, Vogue Fragrance</div>
+                    </div>
+                    <!-- Review 7 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇯🇵</span>
+                                <span class="text-xs font-mono text-slate-400">Japan</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"The cyberpunk earbud promotional spot captured our exact aesthetic vision on the first draft."</p>
+                        <div class="font-bold text-xs text-white">Kenji Sato</div>
+                        <div class="text-[10px] text-slate-500">CEO, SonicBass Tokyo</div>
+                    </div>
+                    <!-- Review 8 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇸🇬</span>
+                                <span class="text-xs font-mono text-slate-400">Singapore</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Exceptional retainer agency service. We get 15 fresh ad variations every single month like clockwork."</p>
+                        <div class="font-bold text-xs text-white">Wei Lin</div>
+                        <div class="text-[10px] text-slate-500">Founder, Nexus Media SG</div>
+                    </div>
+                </div>
+
+                <!-- Column 3 (4 Reviews) -->
+                <div class="space-y-6">
+                    <!-- Review 9 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇦🇪</span>
+                                <span class="text-xs font-mono text-slate-400">UAE</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Superb attention to detail on our luxury watch launch campaign. The gold lighting was immaculate."</p>
+                        <div class="font-bold text-xs text-white">Tariq Al-Mansoor</div>
+                        <div class="text-[10px] text-slate-500">Managing Dir, Chronos</div>
+                    </div>
+                    <!-- Review 10 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇧🇷</span>
+                                <span class="text-xs font-mono text-slate-400">Brazil</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"The 60s fitness app UGC ads brought in thousands of new signups in São Paulo. Amazing hook framework!"</p>
+                        <div class="font-bold text-xs text-white">Gabriel Silva</div>
+                        <div class="text-[10px] text-slate-500">Growth Lead, FitPulse</div>
+                    </div>
+                    <!-- Review 11 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇳🇱</span>
+                                <span class="text-xs font-mono text-slate-400">Netherlands</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Very smooth collaboration. Their AI commercial video generation pipeline is lightyears ahead."</p>
+                        <div class="font-bold text-xs text-white">Bram Van Der Berg</div>
+                        <div class="text-[10px] text-slate-500">Director, Amsterdam Ads</div>
+                    </div>
+                    <!-- Review 12 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇰🇷</span>
+                                <span class="text-xs font-mono text-slate-400">South Korea</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Clean editing, powerful retention cuts, and perfect background audio scoring. Outstanding."</p>
+                        <div class="font-bold text-xs text-white">Min-Ho Park</div>
+                        <div class="text-[10px] text-slate-500">CEO, Seoul Digital</div>
+                    </div>
+                </div>
+
+                <!-- Column 4 (4 Reviews) -->
+                <div class="space-y-6">
+                    <!-- Review 13 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇨🇭</span>
+                                <span class="text-xs font-mono text-slate-400">Switzerland</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Absolute professional standard. They delivered our global banking TV campaign 2 days ahead of deadline."</p>
+                        <div class="font-bold text-xs text-white">Beatrix Meier</div>
+                        <div class="text-[10px] text-slate-500">VP Marketing, Nova Bank</div>
+                    </div>
+                    <!-- Review 14 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇸🇪</span>
+                                <span class="text-xs font-mono text-slate-400">Sweden</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"The 60s organic dog food UGC ads converted at over 6.2% on Meta. Unbelievable performance!"</p>
+                        <div class="font-bold text-xs text-white">Astrid Lindgren</div>
+                        <div class="text-[10px] text-slate-500">Founder, BarkChef</div>
+                    </div>
+                    <!-- Review 15 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇮🇹</span>
+                                <span class="text-xs font-mono text-slate-400">Italy</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Magnificent aesthetic sensibility. Their team in Natore truly understands international high fashion."</p>
+                        <div class="font-bold text-xs text-white">Matteo Rossi</div>
+                        <div class="text-[10px] text-slate-500">Brand Dir, Milano Style</div>
+                    </div>
+                    <!-- Review 16 -->
+                    <div class="p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl">🇲🇽</span>
+                                <span class="text-xs font-mono text-slate-400">Mexico</span>
+                            </div>
+                            <div class="text-amber-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-slate-300 text-sm font-light mb-4">"Spanish voiceover sync and localization for our SaaS tool was executed with absolute perfection."</p>
+                        <div class="font-bold text-xs text-white">Carlos Mendoza</div>
+                        <div class="text-[10px] text-slate-500">Founder, TaskFlow LATAM</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="estimator" class="py-24 border-t border-slate-800 bg-darksurface/40">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Interactive Estimator</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Calculate Your Project Scope</h2>
+                <p class="text-slate-400 font-light text-sm">Select your exact format (including 60s AI UGC or 2-min cinematic films) and speed to get an instant quote.</p>
+            </div>
+
+            <div class="bg-darksurface border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-xl">
+                <!-- Step 1: Service Type -->
+                <div class="mb-8 pb-8 border-b border-slate-800">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-4 font-semibold">1. Choose Production Type & Duration</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="scope-options">
+                        <button type="button" onclick="setCalcOption('scope', 'ugc', 350)" class="calc-scope p-4 rounded-2xl border-2 border-primary bg-primary/10 text-left transition-all">
+                            <div class="font-bold mb-1 text-white">3 AI UGC Videos (60s each)</div>
+                            <div class="text-xs text-slate-400">Starting at $350</div>
+                        </button>
+                        <button type="button" onclick="setCalcOption('scope', 'commercial', 750)" class="calc-scope p-4 rounded-2xl border-2 border-slate-800 bg-darkbg text-left transition-all hover:border-slate-600">
+                            <div class="font-bold mb-1 text-white">AI Commercial Ad</div>
+                            <div class="text-xs text-slate-400">Starting at $750</div>
+                        </button>
+                        <button type="button" onclick="setCalcOption('scope', 'cinematic', 1500)" class="calc-scope p-4 rounded-2xl border-2 border-slate-800 bg-darkbg text-left transition-all hover:border-slate-600">
+                            <div class="font-bold mb-1 text-white">AI Cinematic Film</div>
+                            <div class="text-xs text-slate-400">Starting at $1,500</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Turnaround Speed -->
+                <div class="mb-8 pb-8 border-b border-slate-800">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-4 font-semibold">2. Delivery Timeline</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="speed-options">
+                        <button type="button" onclick="setCalcOption('speed', 'normal', 1)" class="calc-speed p-4 rounded-2xl border-2 border-primary bg-primary/10 text-left transition-all">
+                            <div class="font-bold mb-1 text-white">Standard (5-7 Days)</div>
+                            <div class="text-xs text-slate-400">Standard Delivery Rate</div>
+                        </button>
+                        <button type="button" onclick="setCalcOption('speed', 'rush', 1.4)" class="calc-speed p-4 rounded-2xl border-2 border-slate-800 bg-darkbg text-left transition-all hover:border-slate-600">
+                            <div class="font-bold mb-1 text-white">Rush Delivery (2-3 Days)</div>
+                            <div class="text-xs text-slate-400">+40% Priority Fee</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Custom Quote Option Toggle -->
+                <div class="mb-10 pb-8 border-b border-slate-800">
+                    <div class="flex items-center justify-between bg-darkbg p-4 rounded-2xl border border-slate-800">
+                        <div>
+                            <div class="font-bold text-sm text-white">Require Custom Scope / Enterprise Add-ons?</div>
+                            <div class="text-xs text-slate-400">Add multi-language voiceovers, custom actor training, or raw project files.</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="custom-quote-toggle" onchange="toggleCustomQuote()" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div id="custom-quote-box" class="hidden mt-4">
+                        <textarea id="custom-quote-notes" rows="3" class="w-full bg-darkbg border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-primary" placeholder="Describe your custom requirements, e.g. 10 videos/month, 4K resolution, custom 3D character rigging..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Summary Result -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-darkbg rounded-2xl p-6 border border-slate-800">
+                    <div>
+                        <div class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-1">Estimated Investment</div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-accentcyan" id="calc-total">$350</div>
+                    </div>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primaryglow transition-all text-center shadow-lg shadow-primary/30">
+                        Lock In This Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Production Pipeline</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">From Your Assets to Masterpiece</h2>
+                <p class="text-slate-400 font-light">We would like to get your video storyboard and any raw assets you have, and we bring your idea to life with unmatched precision.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 relative shadow-sm">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-6 right-6 font-mono">01</span>
+                    <h3 class="text-xl font-bold mb-3 mt-4 text-white">Storyboards & Assets</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">Send us your video storyboard, brand guidelines, and any raw assets you have. We review your vision and map out the blueprint.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 relative shadow-sm">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-6 right-6 font-mono">02</span>
+                    <h3 class="text-xl font-bold mb-3 mt-4 text-white">AI Idea to Life</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">Using state-of-the-art neural networks, generative avatars, and cinematic Sora/Runway pipelines, we transform your concept into stunning visual reality.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 relative shadow-sm">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-6 right-6 font-mono">03</span>
+                    <h3 class="text-xl font-bold mb-3 mt-4 text-white">Elite Editing</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">Our pro editors apply razor-sharp retention cutting, kinetic motion subtitles, and immersive sound design to maximize viewer engagement.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="p-8 rounded-3xl bg-darksurface border border-slate-800 relative shadow-sm">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-6 right-6 font-mono">04</span>
+                    <h3 class="text-xl font-bold mb-3 mt-4 text-white">Master Delivery</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">DaVinci Resolve color grading, 4K upscaling, and multi-format aspect ratio exports ready to dominate your TikTok and Meta ad campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 border-t border-slate-800 bg-darksurface/40">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Got Questions?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-400 font-light text-sm">Everything you need to know about working with bLinkEdit Production.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm cursor-pointer">
+                    <summary class="font-bold text-lg flex items-center justify-between text-white">
+                        <span>How realistic are your 60s AI UGC ads and avatars?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm font-light mt-4 leading-relaxed">
+                        Our AI UGC ads utilize proprietary face-swapping, custom avatar training, and advanced voice cloning that makes them virtually indistinguishable from real human actors. They feature natural eye blinks, micro-expressions, and native mouth sync.
+                    </p>
+                </details>
+
+                <details class="group p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm cursor-pointer">
+                    <summary class="font-bold text-lg flex items-center justify-between text-white">
+                        <span>What is the typical turnaround time for a 2-minute cinematic film?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm font-light mt-4 leading-relaxed">
+                        Standard delivery for 2-minute cinematic masterpieces takes between 5 to 7 business days. If you select our Rush Delivery option, we expedite production and deliver polished drafts within 2 to 3 days.
+                    </p>
+                </details>
+
+                <details class="group p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm cursor-pointer">
+                    <summary class="font-bold text-lg flex items-center justify-between text-white">
+                        <span>Do you provide full ownership and commercial rights?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm font-light mt-4 leading-relaxed">
+                        Yes, 100%. Upon final delivery and payment, you receive full commercial rights to use, scale, and run the videos across all paid ad channels (Meta, TikTok, YouTube) and organic social media without any restrictions.
+                    </p>
+                </details>
+
+                <details class="group p-6 rounded-2xl bg-darksurface border border-slate-800 shadow-sm cursor-pointer">
+                    <summary class="font-bold text-lg flex items-center justify-between text-white">
+                        <span>What do I need to provide to get started?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm font-light mt-4 leading-relaxed">
+                        We would like to get your video storyboard, raw footage or product assets if you have them, and a brief description of your goals. If you don't have a storyboard yet, our team can write it from scratch for you!
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <span class="text-accentcyan text-sm uppercase tracking-widest block mb-3 font-mono font-medium">Get in Touch</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Let's Scale Your Brand Today</h2>
+                    <p class="text-slate-400 font-light text-sm leading-relaxed mb-8">Ready to dominate your ad accounts with cutting-edge AI video and elite editing? Send us your brief or message us on WhatsApp directly.</p>
+                    
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <a href="mailto:blinkeditproduction@gmail.com" class="hover:text-white transition-colors font-medium">blinkeditproduction@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <a href="https://wa.me/8801623427883" target="_blank" class="hover:text-white transition-colors font-medium">+880 1623 427883</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-primary"></i>
+                            <span>Natore, Bangladesh // Remote Worldwide</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-primary"></i>
+                            <span>Mon - Sat: 9:00 AM - 10:00 PM BDT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darksurface border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xl">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">Your Name</label>
+                            <input type="text" required class="w-full bg-darkbg border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Alexander Vance">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">Work Email</label>
+                            <input type="email" required class="w-full bg-darkbg border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="alex@lumina.co">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">Project Brief & Storyboard Link</label>
+                            <textarea rows="4" required class="w-full bg-darkbg border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Share your storyboard, assets link, and project goals..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-primary text-white font-bold hover:bg-primaryglow transition-all shadow-lg shadow-primary/30">
+                            Submit Project Brief
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-6 left-6 z-50 flex items-center gap-3">
+        <!-- WhatsApp Chat Pop-up Box -->
+        <div id="whatsapp-popup" class="hidden bg-darksurface border border-slate-800 rounded-2xl p-4 shadow-2xl w-72 text-sm animate-bounce-once">
+            <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-sm">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-xs">bLinkEdit Support</div>
+                        <div class="text-[10px] text-emerald-400 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online now
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleWhatsAppPopup()" class="text-slate-400 hover:text-white text-xs">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p class="text-slate-300 text-xs mb-3">Hi there! 👋 Have a storyboard or project brief? Let's chat instantly on WhatsApp!</p>
+            <a href="https://wa.me/8801623427883?text=Hi%20bLinkEdit%20Production,%20I'm%20interested%20in%20discussing%20an%20AI%20video%20project." target="_blank" class="block w-full text-center py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg shadow-emerald-500/20 transition-all">
+                Start WhatsApp Chat <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+        <!-- WhatsApp Floating Button -->
+        <button onclick="toggleWhatsAppPopup()" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-transform relative group" aria-label="Open WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-[10px] font-bold flex items-center justify-center text-white">1</span>
+        </button>
+    </div>
+
+    <footer class="py-12 border-t border-slate-800 bg-darkbg text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-xs">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <span class="text-white font-bold tracking-widest uppercase">bLinkEdit Production</span>
+            </div>
+            <div>&copy; 2026 bLinkEdit Production (Natore, Bangladesh). All rights reserved.</div>
+            <div class="flex items-center gap-6 text-slate-400">
+                <a href="mailto:blinkeditproduction@gmail.com" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope text-sm"></i></a>
+                <a href="https://wa.me/8801623427883" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-vimeo-v text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal Preview -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/85 backdrop-blur-md p-6">
+        <div class="relative w-full max-w-4xl bg-darksurface border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+                <h3 id="modal-title" class="font-bold text-lg text-white">Project Preview Reel</h3>
+                <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-darkbg text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="aspect-video bg-slate-950 flex items-center justify-center relative">
+                <img id="modal-img" src="" alt="Video Stream" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl mx-auto mb-4 animate-bounce shadow-2xl">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <p class="text-sm text-slate-200 font-mono">Simulating 4K HD Stream...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-darksurface border border-primary text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-primary text-lg"></i>
+        <div>
+            <div class="font-bold text-sm" id="toast-title">Brief Dispatched!</div>
+            <div class="text-xs text-slate-400" id="toast-desc">We will respond within 2 hours.</div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark / Light Theme Toggle Handler
+        let isDarkMode = true;
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            const htmlEl = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+
+            if (isDarkMode) {
+                htmlEl.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon text-accentcyan';
+                themeText.textContent = 'Dark';
+            } else {
+                htmlEl.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-sun text-amber-400';
+                themeText.textContent = 'Light';
+            }
+        }
+
+        // WhatsApp Popup Toggle
+        function toggleWhatsAppPopup() {
+            const popup = document.getElementById('whatsapp-popup');
+            popup.classList.toggle('hidden');
+        }
+
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-darksurface', 'text-slate-400');
+                });
+                btn.classList.remove('bg-darksurface', 'text-slate-400');
+                btn.classList.add('bg-primary', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Video Modal Handler
+        function openVideoModal(title, imgSrc) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-img').src = imgSrc;
+            const modal = document.getElementById('video-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Interactive Estimator State
+        let calcState = {
+            basePrice: 350,
+            speedMultiplier: 1
+        };
+
+        function setCalcOption(type, value, amount) {
+            if (type === 'scope') {
+                calcState.basePrice = amount;
+                document.querySelectorAll('.calc-scope').forEach(el => {
+                    el.classList.remove('border-primary', 'bg-primary/10');
+                    el.classList.add('border-slate-800', 'bg-darkbg');
+                });
+                event.currentTarget.classList.remove('border-slate-800', 'bg-darkbg');
+                event.currentTarget.classList.add('border-primary', 'bg-primary/10');
+            } else if (type === 'speed') {
+                calcState.speedMultiplier = amount;
+                document.querySelectorAll('.calc-speed').forEach(el => {
+                    el.classList.remove('border-primary', 'bg-primary/10');
+                    el.classList.add('border-slate-800', 'bg-darkbg');
+                });
+                event.currentTarget.classList.remove('border-slate-800', 'bg-darkbg');
+                event.currentTarget.classList.add('border-primary', 'bg-primary/10');
+            }
+
+            const total = Math.round(calcState.basePrice * calcState.speedMultiplier);
+            document.getElementById('calc-total').textContent = '$' + total.toLocaleString();
+        }
+
+        function toggleCustomQuote() {
+            const box = document.getElementById('custom-quote-box');
+            box.classList.toggle('hidden');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
